@@ -118,6 +118,14 @@ main {
     text-align: center;
 }
 
+.formatacao td {
+    color: white;
+}
+
+.numeracao {
+    width: 10%;
+}
+
 header {
     background: transparent;
     padding: 1rem;
