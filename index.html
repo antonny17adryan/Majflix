@@ -11,6 +11,7 @@
 <body>
     <header>
         <h1>MajFlix - Faça aqui a lista de avaliação dos seus filmes favoritos!</h1>
+        <div class="milho" id="milho">🌽</div>
         <p>Olá usuário, avalie seu filme favorito de um a dez.</p>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
             <div class="container-fluid">
@@ -29,14 +30,15 @@
                             <a class="nav-link" href="desenvolvedor.html"><i class='bx bx-code-alt'></i> Página dos desenvolvedores</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#"><i class='bx bx-globe'></i> Site da Netflix</a>
-                        </li>
+                            <a class="nav-link" href="charadas.html"><i class='bx bx-question-mark'></i> Charadas</a>
+                          </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-
+    <div id="message" class="hidden">Que usuário curioso você é</div>
+    <div id="background-popcorn"></div>
     <main>
         <section class="formulario">
             <form id="form-avaliacao">
@@ -59,8 +61,8 @@
                 <thead>
                     <tr>
                         <th class="numeracao">#</th>
-                        <th>Filme</th>
-                        <th>Nota</th>
+                        <th>Filme ⬇</th>
+                        <th>Nota ⬇</th>
                         <th>Ações</th>
                     </tr>
                 </thead>
