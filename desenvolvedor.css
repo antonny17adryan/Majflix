@@ -26,7 +26,8 @@ header {
 }
 
 header h1 {
-  display: inline-block; /* Permite que o milho fique ao lado */
+  display: inline-block;
+  /* Permite que o milho fique ao lado */
   background: rgba(20, 20, 20, 0.9);
   padding: 1rem;
   text-align: center;
@@ -146,44 +147,50 @@ img {
 
 img:hover {
   transform: scale(1.1);
-  #perfil1, #perfil2, #perfil3 {
-    width: 300px; /* Defina o tamanho do card */
-    height: 200px; /* Defina o tamanho do card */
 
-    background-position: center; /* Centraliza a imagem no card */
-    background-repeat: no-repeat; /* Evita que a imagem se repita */
-    border: 1px solid #ccc; /* Adiciona uma borda para visualização */
-    position: relative; /* Necessário para posicionar o pseudo-elemento */
-    overflow: hidden; /* Garante que o pseudo-elemento não ultrapasse o card */
+  #perfil1,
+  #perfil2,
+  #perfil3 {
+    width: 300px;
+    height: 200px;
+
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 1px solid #ccc;
+    position: relative;
+    overflow: hidden;
   }
 }
-  /* Camada escura sobre o fundo */
-  #perfil1::before, #perfil2::before, #perfil3::before {
-    content: '';
-    position: absolute;
-    background-size: contain; /* Faz a imagem caber dentro do card */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Camada escura com 50% de opacidade */
-    z-index: 1; /* Garante que a camada fique acima do fundo */
-  }
-  
-  /* Conteúdo do card (texto, etc.) */
-  #perfil1 > *, #perfil2 > *, #perfil3 > * {
-    position: relative; /* Garante que o conteúdo fique acima da camada escura */
-    z-index: 2; /* Coloca o conteúdo acima da camada escura */
-  }
-  
-  #perfil1 {
-    background-image: url('uor-wwohp-logo-3-kids-clouds-key-art-hero-b.jpg');
-  }
-  
-  #perfil2 {
-    background-image: url('Cléo_de_5_à_7.jpg');
-  }
-  
-  #perfil3 {
-    background-image: url('1699433613-tangled.jpg');
-  }
+
+#perfil1::before,
+#perfil2::before,
+#perfil3::before {
+  content: '';
+  position: absolute;
+  background-size: contain;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
+
+#perfil1>*,
+#perfil2>*,
+#perfil3>* {
+  position: relative;
+  z-index: 2;
+}
+
+#perfil1 {
+  background-image: url('uor-wwohp-logo-3-kids-clouds-key-art-hero-b.jpg');
+}
+
+#perfil2 {
+  background-image: url('Cléo_de_5_à_7.jpg');
+}
+
+#perfil3 {
+  background-image: url('1699433613-tangled.jpg');
+}

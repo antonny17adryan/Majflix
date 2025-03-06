@@ -14,10 +14,8 @@ document.addEventListener('DOMContentLoaded', function () {
         { nome: "Os Infiltrados", nota: 8 }
     ];
 
-    // Atualiza a tabela ao carregar a página
     atualizarTabela();
 
-    // Adiciona um filme ao enviar o formulário
     form.addEventListener('submit', function (event) {
         event.preventDefault();
 
@@ -34,7 +32,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     });
 
-    // Atualiza a tabela com os filmes
     function atualizarTabela() {
         tabela.innerHTML = '';
         filmes.forEach((filme, index) => {
@@ -51,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Função para editar um filme
     window.editarFilme = function (index) {
         const filme = filmes[index];
         document.getElementById('nome-filme').value = filme.nome;
@@ -60,32 +56,27 @@ document.addEventListener('DOMContentLoaded', function () {
         atualizarTabela();
     };
 
-    // Função para remover um filme
     window.removerLinha = function (index) {
         filmes.splice(index, 1);
         atualizarTabela();
     };
 
-    // Ordena os filmes por nome
     function ordenarPorNome() {
         filmes.sort((a, b) => a.nome.localeCompare(b.nome));
         atualizarTabela();
     }
 
-    // Ordena os filmes por nota (decrescente)
     function ordenarPorNota() {
         filmes.sort((a, b) => b.nota - a.nota);
         atualizarTabela();
     }
 
-    // Adiciona event listeners para ordenação
     const thNome = document.querySelector('th:nth-child(2)');
     const thNota = document.querySelector('th:nth-child(3)');
 
     thNome.addEventListener('click', ordenarPorNome);
     thNota.addEventListener('click', ordenarPorNota);
 
-    // Efeito de confetti ao clicar no logo
     const logo = document.querySelector('.navbar-brand img');
     logo.addEventListener('click', () => {
         confetti({
@@ -96,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Efeito de clique no milho
     let milho = document.getElementById("milho");
     let cont = 0;
 
@@ -104,32 +94,31 @@ document.addEventListener('DOMContentLoaded', function () {
         cont++;
         if (cont === 5) {
             milho.textContent = "🍿";
-            milho.style.pointerEvents = "none"; // Impede mais cliques
-            createPopcornRain(); // Inicia o efeito de pipocas caindo
+            milho.style.pointerEvents = "none";
+            createPopcornRain();
         }
     });
 
     // Função para criar pipocas caindo
     function createPopcornRain() {
         const backgroundPopcorn = document.getElementById('background-popcorn');
-        const numPopcorns = 50; // Número de pipocas
+        const numPopcorns = 50;
 
         for (let i = 0; i < numPopcorns; i++) {
             const popcorn = document.createElement('div');
             popcorn.textContent = '🍿';
             popcorn.classList.add('popcorn');
-            popcorn.style.left = `${Math.random() * 100}vw`; // Posição horizontal aleatória
-            popcorn.style.animationDuration = `${Math.random() * 2 + 1}s`; // Velocidade aleatória
+            popcorn.style.left = `${Math.random() * 100}vw`;
+            popcorn.style.animationDuration = `${Math.random() * 2 + 1}s`;
             backgroundPopcorn.appendChild(popcorn);
 
-            // Remove a pipoca do DOM após a animação terminar
+
             popcorn.addEventListener('animationend', () => {
                 popcorn.remove();
             });
         }
     }
 
-    // Código Konami
     const konamiCode = [
         'ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown',
         'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight',
@@ -151,29 +140,24 @@ document.addEventListener('DOMContentLoaded', function () {
             konamiCodePosition = 0;
         }
     });
-
-    // Ativa o efeito do código Konami
     function activateKonamiCode() {
         const message = document.getElementById('message');
-        message.textContent = "Que usuário curioso você é"; // Define o texto
+        message.textContent = "Que usuário curioso você é";
         message.classList.remove('hidden');
         message.classList.add('visible');
 
-        // Cria o efeito de sangue
         const bloodEffect = document.createElement('div');
         bloodEffect.classList.add('blood-effect');
         document.body.appendChild(bloodEffect);
 
-        // Faz o texto desaparecer gradualmente enquanto o sangue escorre
         setTimeout(() => {
-            message.style.opacity = 0; // Texto desaparece
-        }, 1500); // Começa a desaparecer após 1,5 segundos (metade da animação do sangue)
+            message.style.opacity = 0;
+        }, 1500);
 
-        // Remove a mensagem e o efeito de sangue após a animação terminar
         setTimeout(() => {
             message.classList.remove('visible');
             message.classList.add('hidden');
             bloodEffect.remove();
-        }, 5000); // Tudo desaparece após 5 segundos
+        }, 5000);
     }
 });

@@ -27,13 +27,14 @@ header {
 }
 
 header h1 {
-    display: inline-block; /* Permite que o milho fique ao lado */
+    display: inline-block;
     background: rgba(20, 20, 20, 0.9);
     padding: 1rem;
     text-align: center;
     color: var(--netflix-red);
     font-size: 2.5rem;
 }
+
 header p {
     background: rgba(20, 20, 20, 0.9);
     padding-bottom: 1rem;
@@ -43,42 +44,42 @@ header p {
 }
 
 .milho {
-    display: inline-block; /* Permite que o milho fique ao lado do h1 */
+    display: inline-block;
     font-size: 40px;
     cursor: pointer;
-    user-select: none; /* Impede que o usuário selecione o texto */
-    transition: transform 0.2s ease; /* Suaviza a transformação */
+    user-select: none;
+    transition: transform 0.2s ease;
 }
 
 .milho:hover {
-    transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+    transform: scale(1.1);
 }
 
 .navbar {
     background: rgba(20, 20, 20, 0.9) !important;
-  
-  }
-  
-  .navbar-brand img {
+
+}
+
+.navbar-brand img {
     height: 30px;
     margin-right: 10px;
     transition: transform 0.3s ease;
-  }
-  
-  .navbar-brand img:hover {
+}
+
+.navbar-brand img:hover {
     transform: scale(1.1);
-  }
-  
-  .navbar-nav .nav-link {
+}
+
+.navbar-nav .nav-link {
     color: var(--netflix-light-gray) !important;
     font-size: 1.1rem;
     margin: 0 10px;
     transition: color 0.3s ease;
-  }
-  
-  .navbar-nav .nav-link:hover {
+}
+
+.navbar-nav .nav-link:hover {
     color: var(--netflix-red) !important;
-  }
+}
 
 main {
     flex: 1;
@@ -93,8 +94,15 @@ main {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .formulario {
@@ -185,7 +193,8 @@ main {
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
-.tabela th, .tabela td {
+.tabela th,
+.tabela td {
     padding: 12px 15px;
     text-align: center;
     border: 1px solid var(--netflix-gray);
@@ -241,7 +250,7 @@ footer {
         width: 100%;
     }
 }
-/* Efeito de fundo vermelho e texto grande */
+
 #message {
     position: fixed;
     top: 0;
@@ -251,10 +260,10 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 4em; /* Texto grande */
+    font-size: 4em;
     color: white;
-    background-color: black; /* Fundo vermelho */
-    z-index: 1000; /* Garante que fique acima de tudo */
+    background-color: black;
+    z-index: 1000;
     opacity: 0;
     transition: opacity 1s ease-in-out;
     pointer-events: none;
@@ -264,26 +273,27 @@ footer {
     opacity: 1;
 }
 
-/* Efeito de sangue escorrendo */
 .blood-effect {
     position: fixed;
-    top: -100%; /* Começa acima da tela */
+    top: -100%;
     left: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(to bottom, rgba(255, 0, 0, 0.8), rgba(139, 0, 0, 0.8));
-    z-index: 1001; /* Fica acima do fundo vermelho */
+    z-index: 1001;
     animation: bloodDrip 5s ease-in-out forwards;
 }
 
 @keyframes bloodDrip {
     0% {
-        top: -100%; /* Começa acima da tela */
+        top: -100%;
     }
+
     100% {
-        top: 100%; /* Desce e desaparece */
+        top: 100%;
     }
 }
+
 .btn-danger {
     background-color: var(--netflix-red) !important;
     border-color: var(--netflix-red) !important;
@@ -291,10 +301,10 @@ footer {
 }
 
 .btn-danger:hover {
-    background-color: #C01245 !important; /* Cor mais escura no hover */
+    background-color: #C01245 !important;
     transform: scale(1.05);
 }
-/* Estilo para o fundo de pipocas */
+
 #background-popcorn {
     position: fixed;
     top: 0;
@@ -302,20 +312,18 @@ footer {
     width: 100%;
     height: 100%;
     pointer-events: none;
-    z-index: -1; /* Coloca o fundo atrás de tudo */
+    z-index: -1;
     overflow: hidden;
 }
 
-/* Estilo para cada pipoca */
 .popcorn {
     position: absolute;
     top: -50px;
     font-size: 2rem;
     animation: fall linear infinite;
-    user-select: none; /* Impede a seleção de texto */
+    user-select: none;
 }
 
-/* Animação de queda */
 @keyframes fall {
     to {
         transform: translateY(100vh);
